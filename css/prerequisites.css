@@ -1,1 +1,17 @@
+.text-display {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 5px;
+    white-space: pre-line;
+    display: none;
+    margin-top: 15px;
+    border: 1px solid #333;
+}
 
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Стили для кнопок и статусных сообщений */
