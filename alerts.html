@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Tools - Alerts</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Заголовок и мета-теги как в index.html -->
     <link rel="stylesheet" href="css/alerts.css">
 </head>
 <body class="bg-dark">
-    <!-- Навигация (такая же, как в index.html) -->
-    <nav class="shadow-sm w-full">
-        <!-- ... -->
-    </nav>
+    <nav><!-- Навигация --></nav>
 
     <div class="w-full px-4 py-8">
         <div class="main-container">
-            <!-- Создание алертов -->
-            <div class="card rounded-lg p-6">
-                <!-- ... форма создания алертов ... -->
+            <!-- Форма создания алерта -->
+            <div class="card">
+                <h2><i class="fas fa-plus-circle mr-2"></i>Создать новый алерт</h2>
+                <form id="alertForm">
+                    <!-- Форма алерта -->
+                </form>
             </div>
-
+            
             <!-- Список алертов -->
-            <div class="card rounded-lg p-6">
-                <!-- ... список алертов ... -->
-            </div>
-
-            <!-- Предпосылки -->
-            <div class="calculator-container">
-                <!-- ... блок предпосылок ... -->
+            <div class="card">
+                <h2><i class="fas fa-bell mr-2"></i>Алерты</h2>
+                <div id="alertsContainer"></div>
             </div>
         </div>
     </div>
 
-    <!-- Подключаем JavaScript -->
-    <script src="js/auth.js"></script>
+    <!-- Модальные окна -->
+    <div id="editModal" class="edit-modal"><!-- ... --></div>
+    <div id="telegramSettingsModal" class="edit-modal"><!-- ... --></div>
+
+    <!-- Подключение JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
     <script src="js/alerts.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
