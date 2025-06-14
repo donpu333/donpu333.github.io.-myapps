@@ -8,6 +8,11 @@
     --light: #ffffff;
     --success-color: #03DAC6;
     --warning-color: #FFA000;
+    --teal-accent: #4CAF50;
+    --green-gradient-start: #4CAF50;
+    --green-gradient-end: #2E7D32;
+    --red-gradient-start: #F44336;
+    --red-gradient-end: #C62828;
     --border-radius: 12px;
 }
 
@@ -17,20 +22,17 @@ body {
     color: var(--light);
 }
 
-.card {
+.alert-card {
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary);
     background-color: #1E1E1E;
-    border-radius: var(--border-radius);
-    padding: 20px;
-    margin-bottom: 20px;
 }
 
-.btn-primary {
-    background-color: var(--primary);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
+.alert-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(33, 150, 243, 0.2);
 }
 
-/* Общие стили для навигации, кнопок и т.д. */
+/* Остальные стили... */
+
+/* Добавьте все остальные стили из тега <style> */
