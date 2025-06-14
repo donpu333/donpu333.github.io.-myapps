@@ -1,1 +1,36 @@
+:root {
+    --primary: #2196F3;
+    --secondary: #1976D2;
+    --accent-red: #C62828;
+    --accent-green: #2E7D32;
+    --accent-orange: #FF6D00;
+    --dark: #121212;
+    --light: #ffffff;
+    --success-color: #03DAC6;
+    --warning-color: #FFA000;
+    --border-radius: 12px;
+}
 
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.card {
+    background-color: #1E1E1E;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Общие стили для навигации, кнопок и т.д. */
