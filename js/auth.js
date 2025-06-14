@@ -1,13 +1,24 @@
-function handleRegister() {
-    // Регистрация пользователя
+export function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
 }
 
-function handleLogin() {
-    // Вход пользователя
+export function handleRegister() {
+    // Логика регистрации
+    // ...
 }
 
-function updateUserUI(email) {
-    // Обновление интерфейса для авторизованного пользователя
+export function handleLogin() {
+    // Логика входа
+    // ...
 }
 
-// Другие функции авторизации...
+export function handleLogout() {
+    // Логика выхода
+    // ...
+}
+
+export function updateUserUI(email) {
+    // Обновление интерфейса для пользователя
+    // ...
+}
