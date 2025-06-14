@@ -12,87 +12,35 @@
 <body class="bg-dark">
     <!-- Навигация -->
     <nav class="shadow-sm w-full">
-        <div class="w-full px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center">
-                    <i class="fas fa-chart-line text-primary text-xl mr-2"></i>
-                    <span class="text-xl font-bold text-light">Crypto Tools</span>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="menu-container">
-                        <button class="menu-button" id="menuButton">
-                            <i class="fas fa-bars mr-2"></i>Меню
-                        </button>
-                        <div class="menu-content" id="menuContent">
-                            <a href="index.html" class="menu-item">
-                                <i class="fas fa-home mr-2"></i>Главная
-                            </a>
-                            <a href="alerts.html" class="menu-item">
-                                <i class="fas fa-bell mr-2"></i>Алерты
-                            </a>
-                            <a href="calculator.html" class="menu-item">
-                                <i class="fas fa-calculator mr-2"></i>Калькулятор
-                            </a>
-                            <a href="widget.html" class="menu-item">
-                                <i class="fas fa-chart-line mr-2"></i>Виджет
-                            </a>
-                            <div class="menu-divider"></div>
-                            <a href="#" class="menu-item" onclick="showLoginForm()" id="loginMenuItem">
-                                <i class="fas fa-sign-in-alt mr-2"></i>Вход
-                            </a>
-                            <a href="#" class="menu-item" onclick="showRegisterForm()" id="registerMenuItem">
-                                <i class="fas fa-user-plus mr-2"></i>Регистрация
-                            </a>
-                            <a href="#" class="menu-item hidden" onclick="handleLogout()" id="logoutMenuItem">
-                                <i class="fas fa-sign-out-alt mr-2"></i>Выход
-                            </a>
-                        </div>
-                    </div>
-                    <div id="connectionStatus" class="connection-status">
-                        <div class="status-dot status-connecting"></div>
-                        <span>Подключение к Binance...</span>
-                    </div>
-                    <button id="userProfileBtn" class="hidden items-center text-gray-300 hover:text-white">
-                        <img id="userAvatar" class="w-8 h-8 rounded-full mr-2" src="https://via.placeholder.com/32/2D2D2D/6B7280?text=U" alt="User">
-                        <span id="userName">Гость</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <!-- Навигационное меню -->
     </nav>
 
     <div class="w-full px-4 py-8">
         <div class="main-container">
-            <!-- Контент главной страницы -->
-            <div class="card rounded-lg p-6">
-                <h2 class="text-xl font-bold mb-6 text-primary">
-                    <i class="fas fa-home mr-2"></i>Добро пожаловать в Crypto Tools
-                </h2>
-                <p class="text-gray-300">Используйте меню для навигации по инструментам:</p>
-                <ul class="mt-4 space-y-2">
-                    <li><i class="fas fa-bell text-primary mr-2"></i> Алерты - создавайте уведомления о ценах</li>
-                    <li><i class="fas fa-calculator text-primary mr-2"></i> Калькулятор - рассчитывайте риски и позиции</li>
-                    <li><i class="fas fa-chart-line text-primary mr-2"></i> Виджет - отслеживайте рынок</li>
-                </ul>
+            <!-- Блоки с краткой информацией и ссылками на другие страницы -->
+            <div class="card">
+                <h2><i class="fas fa-bell mr-2"></i>Алерты</h2>
+                <p>Управление ценовыми алертами</p>
+                <a href="alerts.html" class="btn-primary">Перейти</a>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-calculator mr-2"></i>Калькулятор</h2>
+                <p>Расчет рисков и позиций</p>
+                <a href="calculator.html" class="btn-primary">Перейти</a>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-list-check mr-2"></i>Предпосылки</h2>
+                <p>Чек-листы для торговли</p>
+                <a href="prerequisites.html" class="btn-primary">Перейти</a>
             </div>
         </div>
     </div>
 
-    <!-- Модальные окна (логин, регистрация, уведомления) -->
-    <div id="notificationModal" class="fixed bottom-4 right-4 w-80 rounded-lg shadow-lg border-l-4 border-accent-green hidden" style="background-color: #1E1E1E;">
-        <!-- ... -->
-    </div>
-
-    <div id="loginModal" class="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300">
-        <!-- ... -->
-    </div>
-
-    <div id="registerModal" class="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300">
-        <!-- ... -->
-    </div>
-
-    <!-- Подключаем JavaScript -->
-    <script src="js/auth.js"></script>
+    <!-- Подключение JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
