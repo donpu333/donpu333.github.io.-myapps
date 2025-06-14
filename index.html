@@ -7,10 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="./css/styles.css" rel="stylesheet">
 </head>
 <body class="bg-dark">
-    <!-- Навигация -->
     <nav class="shadow-sm w-full">
         <div class="w-full px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -24,7 +23,7 @@
                             <i class="fas fa-bars mr-2"></i>Меню
                         </button>
                         <div class="menu-content" id="menuContent">
-                            <a href="index.html" class="menu-item">
+                            <a href="#" class="menu-item" onclick="showHome()">
                                 <i class="fas fa-home mr-2"></i>Главная
                             </a>
                             <a href="alerts.html" class="menu-item">
@@ -63,36 +62,102 @@
 
     <div class="w-full px-4 py-8">
         <div class="main-container">
-            <!-- Контент главной страницы -->
+            <!-- Alerts Section -->
             <div class="card rounded-lg p-6">
                 <h2 class="text-xl font-bold mb-6 text-primary">
-                    <i class="fas fa-home mr-2"></i>Добро пожаловать в Crypto Tools
+                    <i class="fas fa-plus-circle mr-2"></i>Создать новый алерт
                 </h2>
-                <p class="text-gray-300">Используйте меню для навигации по инструментам:</p>
-                <ul class="mt-4 space-y-2">
-                    <li><i class="fas fa-bell text-primary mr-2"></i> Алерты - создавайте уведомления о ценах</li>
-                    <li><i class="fas fa-calculator text-primary mr-2"></i> Калькулятор - рассчитывайте риски и позиции</li>
-                    <li><i class="fas fa-chart-line text-primary mr-2"></i> Виджет - отслеживайте рынок</li>
-                </ul>
+
+                <form id="alertForm">
+                    <input type="hidden" id="editAlertId" value="">
+                    <div class="mb-4">
+                        <label class="block text-gray-300 text-sm font-medium mb-2">Криптовалюта</label>
+                        <div class="relative">
+                            <input type="text" id="coinSearch" placeholder="Поиск монеты..."
+                                class="w-full pl-10 pr-4 py-2 rounded-md focus:ring-primary focus:border-primary" required>
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-search text-gray-400"></i>
+                            </div>
+                            <div id="marketTypeHint" class="market-type-hint"></div>
+                        </div>
+                        <div id="coinError" class="validation-message">Пожалуйста, выберите криптовалюту</div>
+                        <select id="symbol" size="5"
+                            class="w-full mt-2 px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary hidden">
+                        </select>
+                    </div>
+
+                    <!-- Остальная форма создания алерта -->
+                    <!-- ... -->
+                </form>
+            </div>
+
+            <div class="card rounded-lg p-6">
+                <div class="compact-alerts-header">
+                    <!-- Заголовок и фильтры алертов -->
+                    <!-- ... -->
+                </div>
+
+                <!-- Вкладки для шорт и лонг алертов -->
+                <div class="flex mb-4">
+                    <!-- Кнопки переключения -->
+                    <!-- ... -->
+                </div>
+
+                <!-- Поисковая строка -->
+                <div class="mb-4">
+                    <input type="text" id="alertSearch" placeholder="Поиск алертов..." class="w-full px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                </div>
+
+                <!-- Контейнеры для алертов -->
+                <div id="longAlerts" class="alerts-container space-y-4 tab-content active">
+                    <!-- Алерты для лонг -->
+                </div>
+                <div id="shortAlerts" class="alerts-container space-y-4 tab-content">
+                    <!-- Алерты для шорт -->
+                </div>
+            </div>
+
+            <!-- Calculator Section -->
+            <div class="calculator-container risk-calculator">
+                <h1>Калькулятор рисков</h1>
+                <!-- Содержимое калькулятора -->
+                <!-- ... -->
+            </div>
+
+            <!-- Предпосылки Section -->
+            <div class="calculator-container">
+                <h2>Предпосылки</h2>
+                <!-- Содержимое раздела предпосылок -->
+                <!-- ... -->
+            </div>
+
+            <!-- Average Calculator -->
+            <div class="calculator-container average-calculator">
+                <h1>Калькулятор среднего</h1>
+                <!-- Содержимое калькулятора среднего -->
+                <!-- ... -->
             </div>
         </div>
     </div>
 
-    <!-- Модальные окна (логин, регистрация, уведомления) -->
+    <!-- Модальные окна -->
     <div id="notificationModal" class="fixed bottom-4 right-4 w-80 rounded-lg shadow-lg border-l-4 border-accent-green hidden" style="background-color: #1E1E1E;">
-        <!-- ... -->
+        <!-- Содержимое уведомления -->
     </div>
 
-    <div id="loginModal" class="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300">
-        <!-- ... -->
+    <div id="editModal" class="edit-modal">
+        <!-- Модальное окно редактирования -->
     </div>
 
-    <div id="registerModal" class="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300">
-        <!-- ... -->
-    </div>
+    <!-- Остальные модальные окна -->
+    <!-- ... -->
 
-    <!-- Подключаем JavaScript -->
-    <script src="js/auth.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Подключение JavaScript -->
+    <script src="./js/api.js"></script>
+    <script src="./js/alerts.js"></script>
+    <script src="./js/calculator.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/notifications.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
