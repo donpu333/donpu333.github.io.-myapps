@@ -713,14 +713,14 @@
         }
 
         .panel {
-            background: rgba(15, 18, 42, 0.9);
+            background: #1E1E1E; /* Изменено с rgba(15, 18, 42, 0.9) */
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(92, 119, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            min-width: 300px; /* Увеличение минимальной ширины */
-            min-height: 600px; /* Увеличение минимальной высоты */
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+           min-width: 300px;
+           min-height: 600px
         }
 
         .panel:hover {
@@ -846,16 +846,16 @@
 
         .ticker-item {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px;
-            margin-bottom: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border-left: 4px solid;
-            cursor: pointer;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    margin-bottom: 12px;
+    background: #2D2D2D; /* Более темный фон для элементов */
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 4px solid;
+    cursor: pointer;
         }
 
         .long .ticker-item {
@@ -1003,15 +1003,15 @@
         }
 
         .stats-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            background: rgba(15, 18, 42, 0.9);
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 20px;
-            border: 1px solid rgba(92, 119, 255, 0.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+           display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    background: #1E1E1E; /* Изменено с rgba(15, 18, 42, 0.9) */
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid rgba(92, 119, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .stat-item {
